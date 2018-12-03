@@ -1,0 +1,298 @@
+/* General Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font: normal 16px sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+h3 {
+  /* grid-area: h3; */
+}
+
+h4 {
+  font-family: 'Cinzel', sans-serif;
+  font-size: 1.2em;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.title {
+  grid-area: h3;
+  text-transform: uppercase;
+  font-family: 'Cinzel', sans-serif;
+  font-size: 1.5em;
+  align-self: center;
+  border-bottom: 3px solid #959d40;
+  width: 230px;
+}
+
+section:not(.hero) {
+  padding: 0 60px;
+}
+
+/* Topbar Styles */
+
+.topbar {
+  display: grid;
+  grid-template-columns: 8fr 2fr;
+  grid-template-rows: 55px;
+  grid-template-areas:
+    "email phone";
+  grid-column-gap: 20px;
+  align-items: stretch;
+  background-color: #5d5c00;
+  font-size: 12px;
+  font-family: 'Quicksand';
+  letter-spacing: 1px;
+}
+
+.topbar a {
+  color: #fffeaa;
+  font-weight: 300;
+}
+
+.topbar i {
+  font-size: 12px;
+  color: #fff5b5;
+}
+
+
+#email {
+  grid-area: email;
+  justify-self: right;
+  align-self: center;
+}
+
+#phone {
+  grid-area: phone;
+  padding: 21px 0 0 20px;
+  border-left: 1px solid #fffeaa;
+}
+
+/* Header Styles */
+
+header {
+  display: grid;
+  grid-template-columns: 15% 65% 20%;
+  grid-template-rows: 120px;
+  grid-template-areas:
+    "logo logo-text social";
+  /* justify-items: center; */
+  align-items: center;
+  background-color: #807d40;
+  border-bottom: 1.1px solid white;
+}
+
+#logo {
+  grid-area: logo;
+  height: auto;
+  width: 80px;
+  margin-left: 90px;
+}
+
+#logo-text {
+  grid-area: logo-text;
+  font-size: 20px;
+  font-family: 'Cinzel', serif;
+  font-weight: 100;
+  color: #ededed;
+}
+
+.social {
+  grid-area: social;
+  justify-self: end;
+  margin-right: 70px;
+}
+
+.social i {
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.social i:hover {
+  color: #b5b446;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* Navbar Styles */
+
+#navbar {
+  display: flex;
+  align-items: center;
+  background-color: #e7e080;
+  text-transform: uppercase;
+  font-family: 'Quicksand', serif;
+  font-size: .9em;
+  padding-left: 70px;
+  height: 80px;
+  position: sticky;
+  top: 0;
+}
+
+#navbar a {
+  color: #1c1c1c;
+  padding: 31px;
+}
+
+#navbar a:first-of-type {
+  color: #f4f4f4;
+  border-top: 3px solid #f4f4f4;
+}
+
+#navbar a:hover {
+  color: #f4f4f4;
+  border-top: 3px solid white;
+  transition: all 0.2s ease;
+}
+
+/* Hero Styles */
+
+.hero .img {
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+}
+
+/* About Styles */
+
+#about {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 250px auto;
+  grid-template-areas:
+    "h3 ."
+    "mission vision";
+  padding-bottom: 150px;
+}
+
+#mission {
+  grid-area: mission;
+  padding: 0 60px;
+  line-height: 1.5em;
+  text-indent: 17px;
+}
+
+#vision {
+  grid-area: vision;
+  padding: 0 60px;
+  line-height: 1.5em;
+  text-indent: 17px;
+}
+
+/* Activities Styles */
+
+#activities {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 250px;
+  grid-template-areas:
+    "h3 . . ."
+    "picture1 picture2 picture3 picture4";
+  background-color: #dee2b8;
+}
+
+#activities-pictures {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 600px;
+}
+
+#activities .img-activity {
+  width: 100px;
+  height: 200px;
+  background-size: cover;
+}
+
+#activity-picture1 {
+  grid-area: picture1;
+}
+
+#activity-picture2 {
+  grid-area: picture2;
+}
+
+#activity-picture3 {
+  grid-area: picture3;
+}
+
+#activity-picture4 {
+  grid-area: picture4;
+}
+
+/* Contact Styles */
+
+#contact {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "contact1 contact2 contact3";
+}
+
+#contact-column1 {
+  grid-area: contact1;
+}
+
+#contact-column2 {
+  grid-area: contact2;
+}
+
+#contact-column3 {
+  grid-area: contact3;
+}
+
+/* Footer Styles */
+
+/* Main Grid Template */
+
+/* .topbar {
+  grid-area: topbar;
+}
+
+header {
+  grid-area: header;
+}
+
+#navbar {
+  grid-area: navbar;
+}
+
+#about {
+  grid-area: about;
+}
+
+#activities {
+  grid-area: activites;
+}
+
+#contact {
+  grid-area: contact;
+}
+
+footer {
+  grid-area: footer;
+}
+
+body {
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "topbar"
+    "header"
+    "navbar"
+    "about"
+    'activities'
+    'contact'
+    'footer';
+} */
