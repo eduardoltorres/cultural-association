@@ -163,7 +163,7 @@ header {
 
 #about {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(2, 50%);
   grid-template-rows: 250px auto;
   grid-template-areas:
     "h3 ."
@@ -199,18 +199,12 @@ header {
 
 #activities-pictures {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
     "picture1 picture2 picture3 picture4";
   grid-area: activities;
   position: relative;
-}
-
-#activities .img-activity {
-  width: 250px;
-  height: 375px;
-  background-size: cover;
 }
 
 #activity-picture1 {
@@ -227,6 +221,72 @@ header {
 
 #activity-picture4 {
   grid-area: picture4;
+}
+
+#activities .img-activity {
+  width: 250px;
+  height: 375px;
+  background-size: cover;
+}
+
+.activity-image-container {
+  display: grid;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+}
+
+#activities #activities-pictures .activity-image-container p {
+  font-family: 'Quicksand';
+  font-weight: 300;
+  font-size: 18px;
+  transform: scale(0);
+}
+
+#activities #activities-pictures .activity-image-container:hover p {
+  transform: translate(0, 180px) scale(1.6);
+  transition: all .5s ease;
+}
+
+#activities #activities-pictures .activity-image-container:hover .img-activity {
+  filter: grayscale(100%);
+  transition: all .5s ease;
+}
+
+.arrow {
+  display: flex;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-color: black;
+  border-radius: 50%;
+  justify-self: center;
+  margin-right: 35px;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+}
+
+#activities #activities-pictures .activity-image-container:hover .arrow {
+  animation-name: arrow;
+  animation-duration: .2s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes arrow {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: translate(0, -90px) scale(.8);
+  }
+  75% {
+    transform: translate(0, -120px) scale(1);
+  }
+  100% {
+    transform: translate(0, -150px) scale(1.5);
+  }
 }
 
 /* Contact Styles */
