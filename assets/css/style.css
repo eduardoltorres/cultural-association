@@ -14,10 +14,6 @@ a {
   text-decoration: none;
 }
 
-h3 {
-  /* grid-area: h3; */
-}
-
 h4 {
   font-family: 'Cinzel', sans-serif;
   font-size: 1.2em;
@@ -26,13 +22,13 @@ h4 {
 }
 
 .title {
-  grid-area: h3;
-  text-transform: uppercase;
-  font-family: 'Cinzel', sans-serif;
-  font-size: 1.5em;
-  align-self: center;
-  border-bottom: 3px solid #959d40;
   width: 230px;
+  grid-area: h3;
+  align-self: center;
+  font-size: 1.5em;
+  font-family: 'Cinzel', sans-serif;
+  text-transform: uppercase;
+  border-bottom: 3px solid #959d40;
 }
 
 section:not(.hero) {
@@ -65,7 +61,6 @@ section:not(.hero) {
   color: #fff5b5;
 }
 
-
 #email {
   grid-area: email;
   justify-self: right;
@@ -86,7 +81,6 @@ header {
   grid-template-rows: 120px;
   grid-template-areas:
     "logo logo-text social";
-  /* justify-items: center; */
   align-items: center;
   background-color: #807d40;
   border-bottom: 1.1px solid white;
@@ -179,13 +173,13 @@ header {
 
 #mission {
   grid-area: mission;
-  padding: 0 60px;
-  line-height: 1.8em;
-  text-indent: 17px;
 }
 
 #vision {
   grid-area: vision;
+}
+
+.about-text {
   padding: 0 60px;
   line-height: 1.8em;
   text-indent: 17px;
@@ -221,9 +215,6 @@ header {
 
 #activity-picture1 {
   grid-area: picture1;
-  color: white;
-  text-transform: uppercase;
-  font-family: 'Open Sans';
 }
 
 #activity-picture2 {
@@ -246,6 +237,7 @@ header {
   grid-template-rows: 400px;
   grid-template-areas:
     "contact1 contact2 contact3";
+  font-family: 'Open Sans';
 }
 
 #contact-column1 {
@@ -263,14 +255,12 @@ header {
 #contact h5 {
   color: #959d40;
   text-transform: uppercase;
-  font-family: 'Open Sans';
   letter-spacing: 1px;
   margin-top: 100px;
   margin-bottom: 20px;
 }
 
 #contact p {
-  font-family: 'Open Sans';
   font-size: .9em;
   font-weight: 300;
   margin: 30px 0;
@@ -295,5 +285,5 @@ footer i {
 footer i:hover {
   color: #b5b446;
   cursor: pointer;
-  transition: color 0.2s ease;  
+  transition: color 0.2s ease;
 }
