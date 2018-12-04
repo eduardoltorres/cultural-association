@@ -138,6 +138,7 @@ header {
   height: 80px;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 #navbar a {
@@ -179,14 +180,14 @@ header {
 #mission {
   grid-area: mission;
   padding: 0 60px;
-  line-height: 1.5em;
+  line-height: 1.8em;
   text-indent: 17px;
 }
 
 #vision {
   grid-area: vision;
   padding: 0 60px;
-  line-height: 1.5em;
+  line-height: 1.8em;
   text-indent: 17px;
 }
 
@@ -195,27 +196,34 @@ header {
 #activities {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 250px;
+  grid-template-rows: 250px 500px;
   grid-template-areas:
-    "h3 . . ."
-    "picture1 picture2 picture3 picture4";
+    "h3"
+    "activities";
   background-color: #dee2b8;
 }
 
 #activities-pictures {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 600px;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "picture1 picture2 picture3 picture4";
+  grid-area: activities;
+  position: relative;
 }
 
 #activities .img-activity {
-  width: 100px;
-  height: 200px;
+  width: 250px;
+  height: 375px;
   background-size: cover;
 }
 
 #activity-picture1 {
   grid-area: picture1;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Open Sans';
 }
 
 #activity-picture2 {
@@ -234,8 +242,8 @@ header {
 
 #contact {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
-  grid-template-rows: auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 400px;
   grid-template-areas:
     "contact1 contact2 contact3";
 }
@@ -252,47 +260,40 @@ header {
   grid-area: contact3;
 }
 
+#contact h5 {
+  color: #959d40;
+  text-transform: uppercase;
+  font-family: 'Open Sans';
+  letter-spacing: 1px;
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
+#contact p {
+  font-family: 'Open Sans';
+  font-size: .9em;
+  font-weight: 300;
+  margin: 30px 0;
+}
+
 /* Footer Styles */
 
-/* Main Grid Template */
-
-/* .topbar {
-  grid-area: topbar;
-}
-
-header {
-  grid-area: header;
-}
-
-#navbar {
-  grid-area: navbar;
-}
-
-#about {
-  grid-area: about;
-}
-
-#activities {
-  grid-area: activites;
-}
-
-#contact {
-  grid-area: contact;
-}
-
 footer {
-  grid-area: footer;
+  background-color: #dee2b8;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 9px;
 }
 
-body {
-  grid-template-columns: auto;
-  grid-template-rows: auto;
-  grid-template-areas:
-    "topbar"
-    "header"
-    "navbar"
-    "about"
-    'activities'
-    'contact'
-    'footer';
-} */
+footer i {
+  margin-right: 20px;
+}
+
+footer i:hover {
+  color: #b5b446;
+  cursor: pointer;
+  transition: color 0.2s ease;  
+}
