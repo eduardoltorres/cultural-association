@@ -28,11 +28,19 @@ h4 {
   font-size: 1.5em;
   font-family: 'Cinzel', sans-serif;
   text-transform: uppercase;
-  border-bottom: 3px solid #959d40;
+  border-bottom: 3px solid var(--dark-blue);
 }
 
 section:not(.hero) {
   padding: 0 60px;
+}
+
+/* Variables  */
+
+:root {
+  --dark-blue: #305465;
+  --light-blue: #758c8e;
+  --almost-white: #f7f7f7;
 }
 
 /* Topbar Styles */
@@ -47,20 +55,20 @@ section:not(.hero) {
     "email phone";
   grid-column-gap: 20px;
   align-items: stretch;
-  background-color: #5d5c00;
+  background-color: var(--dark-blue);
   font-size: 12px;
   font-family: 'Quicksand';
   letter-spacing: 1px;
 }
 
 .topbar a {
-  color: #fffeaa;
+  color: var(--almost-white);
   font-weight: 300;
 }
 
 .topbar i {
   font-size: 12px;
-  color: #fff5b5;
+  color: var(--almost-white);
 }
 
 #email {
@@ -72,7 +80,7 @@ section:not(.hero) {
 #phone {
   grid-area: phone;
   padding: 21px 0 0 20px;
-  border-left: 1px solid #fffeaa;
+  border-left: 1px solid var(--almost-white);
 }
 
 @media (max-width: 950px) {
@@ -92,8 +100,8 @@ header {
   grid-template-areas:
     "logo logo-text social";
   align-items: center;
-  background-color: #807d40;
-  border-bottom: 1.1px solid white;
+  background-color: var(--light-blue);
+  border-bottom: 1.1px solid var(--dark-blue);
 }
 
 #logo {
@@ -108,7 +116,7 @@ header {
   font-size: 20px;
   font-family: 'Cinzel', serif;
   font-weight: 100;
-  color: #ededed;
+  color: var(--almost-white);
 }
 
 .social {
@@ -118,13 +126,13 @@ header {
 }
 
 .social i {
-  color: white;
+  color: var(--almost-white);
   font-size: 16px;
   padding: 10px;
 }
 
 .social i:hover {
-  color: #b5b446;
+  color: var(--dark-blue);
   cursor: pointer;
   transition: color 0.2s ease;
 }
@@ -158,7 +166,7 @@ header {
 #navbar {
   display: flex;
   align-items: center;
-  background-color: #e7e080;
+  background-color: var(--almost-white);
   text-transform: uppercase;
   font-family: 'Quicksand', serif;
   font-size: .9em;
@@ -166,22 +174,21 @@ header {
   height: 80px;
   position: sticky;
   top: 0;
+  opacity: 0.96;
   z-index: 1;
 }
 
 #navbar a {
-  color: #1c1c1c;
+  color: var(--dark-blue);
   padding: 31px;
 }
 
 #navbar a:first-of-type {
-  color: #f4f4f4;
-  border-top: 3px solid #f4f4f4;
+  border-top: 3px solid var(--dark-blue);
 }
 
 #navbar a:hover {
-  color: #f4f4f4;
-  border-top: 3px solid white;
+  border-top: 3px solid var(--dark-blue);
   transition: all 0.2s ease;
 }
 
@@ -263,7 +270,7 @@ header {
   grid-template-areas:
     "h3"
     "activities";
-  background-color: #dee2b8;
+  background-color: var(--almost-white);
 }
 
 #activities-pictures {
@@ -301,7 +308,7 @@ header {
 .activity-image-container {
   display: grid;
   text-transform: uppercase;
-  color: white;
+  color: var(--almost-white);
   text-align: center;
 }
 
@@ -313,7 +320,7 @@ header {
 }
 
 #activities #activities-pictures .activity-image-container:hover p {
-  transform: translate(0, 180px) scale(1);
+  transform: translate(0, 170px) scale(1);
   transition: all .3s ease;
 }
 
@@ -376,7 +383,8 @@ header {
   }
   #activities-pictures {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+    grid-template-rows: repeat(2, 1fr);
+
     grid-template-areas:
       "picture1 picture2"
       "picture3 picture4";
@@ -431,6 +439,9 @@ header {
 }
 
 @media (max-width: 700px) {
+  #activities {
+    padding: 0;
+  }
   #activities-pictures {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 1fr);
@@ -441,6 +452,18 @@ header {
       "picture4";
     grid-row-gap: 5px;
     padding: 0;
+  }
+  #activities #activities-pictures .activity-image-container:hover .img-activity {
+    filter: none;
+    transition: none;
+  }
+  #activities #activities-pictures .activity-image-container p {
+    transform: translate(0, 170px) scale(1);
+  }
+  #activities #activities-pictures .activity-image-container:hover p {
+    transform: none;
+    transition: none;
+    transform: translate(0, 170px) scale(1);
   }
 }
 
@@ -470,7 +493,7 @@ header {
 }
 
 #contact h5 {
-  color: #959d40;
+  color: var(--dark-blue);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 100px;
@@ -483,10 +506,19 @@ header {
   margin: 30px 0;
 }
 
+@media (max-width: 600px) {
+  #contact {
+    margin-left: -30px;
+  }
+  .contact-column {
+    padding-right: 23px;
+  }
+}
+
 /* Footer Styles */
 
 footer {
-  background-color: #dee2b8;
+  background-color: var(--dark-blue);
   height: 60px;
   width: 100%;
   display: flex;
@@ -497,10 +529,17 @@ footer {
 
 footer i {
   margin-right: 20px;
+  color: var(--almost-white)
 }
 
 footer i:hover {
-  color: #b5b446;
+  color: var(--light-blue);
   cursor: pointer;
   transition: color 0.2s ease;
+}
+
+@media (max-width: 700px) {
+  footer {
+    justify-content: center;
+  }
 }
